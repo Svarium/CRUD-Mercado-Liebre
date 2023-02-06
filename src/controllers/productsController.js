@@ -9,8 +9,10 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		return res.render('products', {
-			products
+		return res.render('products', { 
+			products,
+			toThousand
+
 		})
 		
 	},
@@ -20,7 +22,8 @@ const controller = {
 		const {id} = req.params;
 		const productDetail = products.find(product => product.id === +id)
 		return res.render('detail',{
-			...productDetail
+			...productDetail,
+			toThousand
 		})
 	},
 
@@ -73,7 +76,7 @@ const controller = {
 			discount: +discount,
 			category: category,
 			description: description.trim(),
-			image:null,
+			image:null, //chequear con product.image para que no pierda la imagen si la tenia
 		}
 
 		const productosModified = products.map(product=>{
@@ -87,16 +90,17 @@ const controller = {
 
 		fs.writeFileSync('./src/data/productsDataBase.json',JSON.stringify(productosModified, null, 3),'utf-8');
 
-		return res.redirect('/products')
+		return res.redirect('/products') // mandar a *('/products/detail/' +id)
 
 	},
 
 	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+	destroy : (req, res) => { //leer el json de nuevo!
 		const id = req.params.id;
 		const product = products.filter(product => product.id !== +id)
 		
 	fs.writeFileSync('./src/data/productsDataBase.json',JSON.stringify(product, null, 3),'utf-8');
+	
 	return res.redirect('/products')
 	}
 };

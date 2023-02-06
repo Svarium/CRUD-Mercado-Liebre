@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('partials/head', {title: 'Inicio'}) %>
+<%- include('partials/head', {title: name}) %>
 <body>
 	<!-- Header -->
 	<%- include('partials/headerNavbar') %>
 	<!-- /Header -->
+
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -27,12 +28,12 @@
 						<h2 class="product-detail-title"><%= name %></h2>
 						
 							<p class="product-detail-price small">
-								<span>$<%= price %></span>
+								<span>$<%=toThousand(price) %></span>
 								/
 								<b><%= discount %>% </b>
 							</p>
 							<p class="product-detail-price">
-								$<%= price - (price * discount)/100   %> 
+								$<%= toThousand(price - (price * discount)/100)   %> 
 							</p>
 							
 
@@ -52,7 +53,7 @@
 
 						<a href="/products/edit/<%=id%>" class="action-button edit">EDITAR PRODUCTO</a>
 						<form action="/products/delete/<%= id %>?_method=DELETE " method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
+							<button type="submit"  class="action-button delete">ELIMINAR</button>
 						</form>
 					</article>
 				</div>

@@ -12,11 +12,17 @@ const controller = {
 		const inSale = products.filter(product  => product.category === "in-sale");
 	return res.render('index',{
 		visited,
-		inSale
+		inSale,
+		toThousand
 	})
 	},
-	search: (req, res) => {
-		// Do the magic
+	search: (req, res) => { //me falta tolowercase para buscar con mayusculas y el if en la vista para cuando encuentra producto
+		const {keywords} = req.query
+		const productFiltered = products.filter(product=> product.name.includes(keywords) || product.description.includes(keywords))
+		return res.render('results',{
+			productFiltered,
+			toThousand
+		})
 	},
 };
 

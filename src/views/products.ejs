@@ -21,7 +21,7 @@
 							<img src="/images/products/<%= image ? image : 'not-image.webp' %>" alt="imagen de producto">
 						</figure>
 						<article class="product-box_data">
-							<h2>$<%= price %> </h2>
+							<h2>$<%= toThousand(price) %> </h2>
 							<span> <%= discount %>%  </span>
 							<p> <%= name %> </p>
 							<i class="fas fa-truck"></i>
