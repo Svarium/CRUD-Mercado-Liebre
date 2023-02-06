@@ -145,11 +145,20 @@
    },
    {
       "id": 17,
-      "name": "Auricular Gamer pro",
-      "price": 6000,
+      "name": "Manga - Demon Slayer tomo 5",
+      "price": 4500,
       "discount": 5,
+      "category": "visited",
+      "description": "Manga de Kimetsu no yaiba tomo - 5",
+      "image": null
+   },
+   {
+      "id": 18,
+      "name": "Trenza del mar Esmeralda",
+      "price": 8500,
+      "discount": 10,
       "category": "in-sale",
-      "description": "Auricular Gamer pro",
+      "description": "El último libro de Brandon Sanderson",
       "image": null
    }
 ]

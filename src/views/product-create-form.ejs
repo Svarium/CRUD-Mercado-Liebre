@@ -41,7 +41,7 @@
 						<textarea name="description" id="description" class="form-input"></textarea>
 					</div>
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Guardar producto</button>
+						<button type="submit" onclick="creado()" class="buy-now-button">Guardar producto</button>
 					</div>
 				</div>
 			</form>
@@ -53,5 +53,12 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
+
+	<script>
+		let creado = () =>{
+			confirm("Producto agregado exitosamente!!!!")
+		}
+	</script>
+	
 </body>	
 </html>

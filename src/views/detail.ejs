@@ -26,7 +26,8 @@
 				<div class="col-12 col-lg-4">
 					<article class="product-detail-info">
 						<h2 class="product-detail-title"><%= name %></h2>
-						
+
+						<% if (discount) { %>
 							<p class="product-detail-price small">
 								<span>$<%=toThousand(price) %></span>
 								/
@@ -35,7 +36,12 @@
 							<p class="product-detail-price">
 								$<%= toThousand(price - (price * discount)/100)   %> 
 							</p>
-							
+						<% }else{ %>										
+
+						<p class="product-detail-price">
+							$<%= toThousand(price) %> 
+						</p>
+						<% } %>
 
 						<ul class="actions-list">
 							<li>
@@ -53,7 +59,7 @@
 
 						<a href="/products/edit/<%=id%>" class="action-button edit">EDITAR PRODUCTO</a>
 						<form action="/products/delete/<%= id %>?_method=DELETE " method="POST" style="display: inline-flex">
-							<button type="submit"  class="action-button delete">ELIMINAR</button>
+							<button type="submit" onclick="borrando()"  class="action-button delete">ELIMINAR</button>
 						</form>
 					</article>
 				</div>
@@ -65,6 +71,12 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
+
+	<script>
+	let borrando = () =>{
+		confirm("Producto eliminado exitosamente!!!!!")
+	}
+	</script>
 
 </body>	
 </html>
