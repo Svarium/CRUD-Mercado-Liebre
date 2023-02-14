@@ -163,11 +163,20 @@
    },
    {
       "id": 20,
-      "name": "Wallpaper Dr Stone",
-      "price": 120,
-      "discount": 5,
+      "name": "Libros",
+      "price": 25000,
+      "discount": 20,
       "category": "in-sale",
-      "description": "Fondo de Pantalla con Senku de Dr.Stone",
-      "image": "1676396447054_products_.jpg"
+      "description": "Lote de libros usados a la venta",
+      "image": "1676399872772_products_.jpg"
+   },
+   {
+      "id": 21,
+      "name": "Wallpaper Dr Stone",
+      "price": 200,
+      "discount": 5,
+      "category": "visited",
+      "description": "Fondo de pantalla de Dr.Stone para pc",
+      "image": "1676399934677_products_.jpg"
    }
 ]

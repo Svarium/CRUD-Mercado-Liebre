@@ -9,6 +9,8 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
+		const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		return res.render('products', { 
 			products,
 			toThousand
@@ -19,11 +21,13 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
+		const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		const {id} = req.params;
 		const productDetail = products.find(product => product.id === +id)
 		return res.render('detail',{
 			...productDetail,
-			toThousand
+			toThousand,
 		})
 	},
 
@@ -78,7 +82,7 @@ const controller = {
 			discount: +discount,
 			category: category,
 			description: description.trim(),
-			image:null, //chequear con product.image para que no pierda la imagen si la tenia
+			image:req.file ? req.file.filename : product.image, //chequear con product.image para que no pierda la imagen si la tenia
 		}
 
 		const productosModified = products.map(product=>{
@@ -88,11 +92,11 @@ const controller = {
 			return product
 		});
 
-		
+		/* res.send(productosModified) */
 
 		fs.writeFileSync('./src/data/productsDataBase.json',JSON.stringify(productosModified, null, 3),'utf-8');
 
-		return res.redirect('/products') // mandar a *('/products/detail/' +id)
+		return res.redirect('/products/detail/' +id) // mandar a *('/products/detail/' +id)
 
 	},
 
