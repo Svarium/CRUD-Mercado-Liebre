@@ -16,7 +16,7 @@ const controller = {
 		toThousand
 	})
 	},
-	search: (req, res) => { //me falta tolowercase para buscar con mayusculas y el if en la vista para cuando encuentra producto
+	search: (req, res) => { 
 		const {keywords} = req.query
 		const productFiltered = products.filter(product=> product.name.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()))
 		return res.render('results',{

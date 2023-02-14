@@ -144,15 +144,6 @@
       "image": "img-parlante-sony.jpg"
    },
    {
-      "id": 17,
-      "name": "Manga - Demon Slayer tomo 5",
-      "price": 4500,
-      "discount": 5,
-      "category": "visited",
-      "description": "Manga de Kimetsu no yaiba tomo - 5",
-      "image": null
-   },
-   {
       "id": 18,
       "name": "Trenza del mar Esmeralda",
       "price": 8500,
@@ -160,5 +151,23 @@
       "category": "in-sale",
       "description": "El último libro de Brandon Sanderson",
       "image": null
+   },
+   {
+      "id": 19,
+      "name": "Walppaper de gatos",
+      "price": 150,
+      "discount": 5,
+      "category": "in-sale",
+      "description": "Fondo de pantalla con memes de michis chistosos",
+      "image": "1676335663070_products_.jpg"
+   },
+   {
+      "id": 20,
+      "name": "Wallpaper II",
+      "price": 200,
+      "discount": 10,
+      "category": "in-sale",
+      "description": "Otro wallpaper de michi",
+      "image": "1676335736314_products_.jpg"
    }
 ]

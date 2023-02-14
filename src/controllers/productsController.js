@@ -35,7 +35,8 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		const {name, price, discount, category, description, image} = req.body;
+		const {name, price, discount, category, description} = req.body;
+		
 
 		const newProduct = {
 			id : products[products.length -1].id +1,
@@ -44,10 +45,11 @@ const controller = {
 			discount: +discount,
 			category: category,
 			description: description.trim(),
-			image:null,
+			image : req.file ? req.file.filename : null,
+			
 		};
 		products.push(newProduct);
-		/* res.send(products) */
+		
 		fs.writeFileSync('./src/data/productsDataBase.json',JSON.stringify(products, null, 3),'utf-8');
 		return res.redirect('/products')
 	},
