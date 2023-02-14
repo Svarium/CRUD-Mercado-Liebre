@@ -163,11 +163,11 @@
    },
    {
       "id": 20,
-      "name": "Wallpaper II",
-      "price": 200,
-      "discount": 10,
+      "name": "Wallpaper Dr Stone",
+      "price": 120,
+      "discount": 5,
       "category": "in-sale",
-      "description": "Otro wallpaper de michi",
-      "image": "1676335736314_products_.jpg"
+      "description": "Fondo de Pantalla con Senku de Dr.Stone",
+      "image": "1676396447054_products_.jpg"
    }
 ]
