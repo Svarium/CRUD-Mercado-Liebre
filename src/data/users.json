@@ -1,0 +1,10 @@
+[
+   {
+      "id": 1,
+      "name": "Ezequiel",
+      "surname": "Muñoz",
+      "email": "svariumfoo@gmail.com",
+      "pass": "$2a$12$7eJ1lg9ILhk19gr7Mo0SjuCsEoimhUGvE.rv93v4fBMmtH.zWKVVG",
+      "rol": "user"
+   }
+]
