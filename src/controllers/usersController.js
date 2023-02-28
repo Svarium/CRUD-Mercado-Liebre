@@ -84,6 +84,7 @@ module.exports = {
 
     logout : (req, res) => {
         req.session.destroy();
+        res.cookie('userMercadoLiebre', null, {maxAge:-1}) //mata la cookie!!
         return res.redirect('/')
     }
 
